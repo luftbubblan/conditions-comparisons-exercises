@@ -11,6 +11,10 @@
 1.5-2  
 */
 
+
+
+
+//FELAKTIGT SLUMPTAL
 let randomNumber = "";
 let roundedNumber = "";
 let count = 0;
@@ -35,7 +39,40 @@ while(count < 1000000) {
 }
 
 let runs = zero.length + one.length + two.length;
-console.log("runs " + runs);
+console.log("runs with Math.random " + runs);
+console.log("zero " + zero.length);
+console.log("one " + one.length);
+console.log("two " + two.length);
+
+
+
+
+console.log("-------------------------------------");
+//KORREKT SLUMPTAL
+randomNumber = "";
+roundedNumber = "";
+count = 0;
+zero = [];
+one = [];
+two = [];
+
+while(count < 1000000) {
+    randomNumber = Math.floor(Math.random() * 3);
+    roundedNumber = Math.round(randomNumber);
+    if(roundedNumber == 0) {
+        zero.push("line")
+    }
+    if(roundedNumber == 1) {
+        one.push("line")
+    }
+    if(roundedNumber == 2) {
+        two.push("line")
+    }
+    count++;
+}
+
+runs = zero.length + one.length + two.length;
+console.log("runs with Math.floor" + runs);
 console.log("zero " + zero.length);
 console.log("one " + one.length);
 console.log("two " + two.length);
